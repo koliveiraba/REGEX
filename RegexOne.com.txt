@@ -1,0 +1,222 @@
+* Lesson 1:
+
+Exercise 1: Matching Characters
+Task	Text	 
+Match	abcdefg	Success
+Match	abcde	Success
+Match	abc	Success
+
+
+sol:
+
+abc | abc.*?
+
+* Lesson 1½
+
+Exercise 1½: Matching Digits
+Task	Text	 
+Match	abc123xyz	Success
+Match	define "123"	Success
+Match	var g = 123;	Success
+
+sol:
+
+123 | (123)
+
+* Lesson 2
+
+Exercise 2: Matching With Wildcards
+Task	Text	 
+Match	cat.	Success
+Match	896.	Success
+Match	?=+.	Success
+Skip	abc1	To be completed
+
+
+sol:
+
+.*\.
+
+
+* Lesson 3
+
+
+Task	Text	 
+Match	can	Success
+Match	man	Success
+Match	fan	Success
+Skip	dan	To be completed
+Skip	ran	To be completed
+Skip	pan	To be completed
+
+sol:
+
+[cmf]an | (c|m|f)an
+
+* Lesson 4
+
+Exercise 3: Matching Characters
+Task	Text	 
+Match	can	Success
+Match	man	Success
+Match	fan	Success
+Skip	dan	To be completed
+Skip	ran	To be completed
+Skip	pan	To be completed
+
+
+sol:
+
+[^b]og
+
+
+* Lesson 5
+
+Exercise 5: Matching Character Ranges
+Task	Text	 
+Match	Ana	Success
+Match	Bob	Success
+Match	Cpc	Success
+Skip	aax	To be completed
+Skip	bby	To be completed
+Skip	ccz	To be completed
+
+
+sol:
+
+[A-Z].*
+
+
+* Lesson 6
+
+Exercise 6: Matching Repeated Characters
+Task	Text	 
+Match	wazzzzzup	Success
+Match	wazzzup	Success
+Skip	wazup	To be completed
+
+
+sol:
+
+\z{3}
+
+
+* Lesson 7
+
+
+Exercise 7: Matching Repeated Characters
+Task	Text	 
+Match	aaaabcc	Success
+Match	aabbbbc	Success
+Match	aacc	Success
+Skip	a	To be completed
+
+
+sol?
+
+
+aa+.*
+
+
+* Lesson 8
+
+Exercise 8: Matching Optional Characters
+Task	Text	 
+Match	1 file found?	Success
+Match	2 files found?	Success
+Match	24 files found?	Success
+Skip	No files found.	To be completed
+
+sol:
+
+\d+\sfiles?\sfound\?
+
+
+* Lesson 9
+
+Exercise 9: Matching Whitespaces
+Task	Text	 
+Match	1.   abc	Success
+Match	2.	abc	Success
+Match	3.           abc	Success
+Skip	4.abc	To be completed
+
+
+sol:
+
+\d.\s+abc
+
+
+* Lesson 10
+
+Exercise 10: Matching Lines
+Task	Text	 
+Match	Mission: successful	Success
+Skip	Last Mission: unsuccessful	To be completed
+Skip	Next Mission: successful upon capture of target	To be completed
+
+sol:
+
+^Mission: successful$
+
+
+* Lesson 11
+
+Exercise 11: Matching Groups
+Task	Text	Capture Groups	 
+Capture	file_record_transcript.pdf			file_record_transcript	Success
+Capture	file_07241999.pdf					file_07241999	Success
+Skip	testfile_fake.pdf.tmp								To be completed
+
+
+sol:
+
+^(file_.*).pdf$
+
+
+* Lesson 12
+
+Exercise 12: Matching Nested Groups
+Task	Text	Capture Groups	 
+Capture	Jan 1987	Jan 1987 1987	Success
+Capture	May 1969	May 1969 1969	Success
+Capture	Aug 2011	Aug 2011 2011	Success
+
+
+sol:
+
+(\w{3} (\d{4}))
+
+* Lesson 13
+
+
+Exercise 13: Matching Nested Groups
+Task	Text	Capture Groups	 
+Capture	1280x720	1280 720	Success
+Capture	1920x1600	1920 1600	Success
+Capture	1024x768	1024 768	Success
+
+sol:
+
+(\d*)x(\d*)
+
+
+* Lesson 14
+
+Exercise 14: Matching Conditional Text
+Task	Text	 
+Match	I love cats	Success
+Match	I love dogs	Success
+Skip	I love logs	To be completed
+Skip	I love cogs	To be completed
+
+sol:
+
+I love (cats|dogs)
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
